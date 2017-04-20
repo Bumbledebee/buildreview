@@ -1,0 +1,12 @@
+<h1>Create a new Topic</h1>
+<%= render 'form', topic: @topic %>
+
+<h1>Find all other Topics for editing below</h1>
+<b>Please consider that topics are orderd by orderids<b>
+
+<% @topics.order("orderid asc").each do |t|%>
+<%= render 'form', topic: t %>
+<%end %>
+
+
+<%= link_to 'Back', tests_path %>
