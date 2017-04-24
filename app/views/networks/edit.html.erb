@@ -1,0 +1,85 @@
+<%= form_for(@network) do |f| %>
+  <% if @network.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(network.errors.count, "error") %> prohibited this network from being saved:</h2>
+
+      <ul>
+      <% network.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    Name: <%=@network.name%>
+  </div>
+
+  <div class="field">
+    <%= f.label :android %>
+    <%= f.check_box :android %>
+  </div>
+
+  <div class="field">
+    <%= f.label "iOS" %>
+    <%= f.check_box :ios %>
+  </div>
+
+  <div class="field">
+    <%= f.label :native %>
+    <%= f.check_box :native %>
+  </div>
+
+  <div class="field">
+    <%= f.label :adobe %>
+    <%= f.check_box :adobe %>
+  </div>
+
+  <div class="field">
+    <%= f.label :unity %>
+    <%= f.check_box :unity %>
+  </div>
+
+  <div class="field">
+    <%= f.label "rewarded video" %>
+    <%= f.check_box :ios %>
+  </div>
+
+  <div class="field">
+    <%= f.label :interstitial %>
+    <%= f.check_box :interstitial %>
+  </div>
+
+  <div class="field">
+    <%= f.label :banner %>
+    <%= f.check_box :banner %>
+  </div>
+
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+
+  <div class="field">
+    Fyber: <%=@network.fyber%>
+  </div>
+
+  <div class="field">
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+  </div>
+
+  <div class="field">
+    Latest Version: <%=@network.latest_version%>
+  </div>
+
+  <div class="field">
+    Earlier Versions: <%=@network.versions%>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', networks_path %>

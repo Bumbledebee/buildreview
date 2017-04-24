@@ -10,10 +10,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170420123829) do
+ActiveRecord::Schema.define(version: 20170424084050) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "networks", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "android"
+    t.boolean  "ios"
+    t.boolean  "adobe"
+    t.boolean  "unity"
+    t.boolean  "native"
+    t.boolean  "rv"
+    t.boolean  "interstitial"
+    t.boolean  "banner"
+    t.boolean  "active"
+    t.boolean  "fyber"
+    t.text     "comment"
+    t.string   "latest_version"
+    t.string   "versions"
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
+  end
 
   create_table "tests", force: :cascade do |t|
     t.string   "name"

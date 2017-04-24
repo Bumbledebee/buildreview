@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Networks</h1>
+<ul><% @networks.each do |network| %><br>
+      <li><b><%= network.name%></b></li>
+      <li>Android: <%= network.android%> iOS: <%= network.ios%></li>
+      <li>native: <%= network.native%> adobe: <%= network.adobe%> unity: <%= network.unity%></li>
+      <li>rewarded video: <%= network.rv%> interstitial: <%= network.interstitial%> banner: <%= network.banner%></li>
+      <li>last_version: <%= network.latest_version%></li>
+      <li>earlier versions: <%= network.versions%></li>
+      <li>fyber: <%= network.fyber%> overall active: <%= network.active%></li>
+      <li>comment: <%= network.comment%></li>
+      <li>
+      <%= link_to 'Edit', edit_network_path(network) %>
+      <%= link_to 'Destroy', network, method: :delete, data: { confirm: 'Are you sure?' } %></li>
+
+  <% end %></ul>
