@@ -138,3 +138,4 @@ ResultStatus.create([{name: "Critical", description: "The integration can not be
 ResultStatus.create([{name: "Warning", description: "The integration will not perform well until these issues are resolved"}])
 ResultStatus.create([{name: "Minor", description: "The integration may have minor problems until these issues are resolved"}])
 ResultStatus.create([{name: "Good", description: "All is good. We have no suggestions from our side."}])
+TestStatus.create([{name: "not started"},{name: "in progress"},{name: "done"}])
