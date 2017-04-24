@@ -17,3 +17,6 @@
 + bundle install
 + rails db:setup
 + rails db:migrate
+###### Setting up the models
++ rails generate model topic name:string orderid:integer
++ rails generate scaffold test name:string criteria:text topic_id:integer orderid:integer
