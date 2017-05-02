@@ -12,6 +12,16 @@
   <% end %>
 
   <div class="field">
+    <%= f.label :topic_id %>
+    <%= f.collection_select :topic_id, Topic.order(:orderid), :id, :name%>
+  </div>
+<!-- Only when the order of the tests within a topic has to be changed we need to add orderid.
+    <div class="field">
+      <%= f.label :orderid %>
+      <%= f.number_field :orderid %>
+    </div>
+  -->
+  <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
@@ -21,16 +31,6 @@
     <%= f.text_area :criteria %>
   </div>
 
-  <div class="field">
-    <%= f.label :topic_id %>
-    <%= f.collection_select :topic_id, Topic.order(:orderid), :id, :name%>
-  </div>
-<!-- Only when the order of the tests within a topic has to be changed we need to add orderid.
-  <div class="field">
-    <%= f.label :orderid %>
-    <%= f.number_field :orderid %>
-  </div>
--->
   <div class="actions">
     <%= f.submit %>
   </div>

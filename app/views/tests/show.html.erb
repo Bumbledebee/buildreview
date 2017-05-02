@@ -1,6 +1,15 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+Overall Topic:
+  <%= @test.topic.name %>
+</p>
+
+<!--<p> Only when the order of the tests within a topic has to be changed we need to add orderid.
+  <strong>Orderid:</strong>
+  <%= @test.orderid %>
+</p>-->
+<p>
   <strong>Name:</strong>
   <%= @test.name %>
 </p>
@@ -9,16 +18,21 @@
   <strong>Criteria:</strong>
   <%= @test.criteria %>
 </p>
+<%= link_to 'Edit the Test', edit_test_path(@test) %> |
 
 <p>
-  <strong>Topic:</strong>
-  <%= @test.topic.name %>
+  <strong>Possible answers:</strong>
+  <ol><% @test_values.where(test_id: @test.id).each do |value| %>
+      <li><%= value.name %>
+      <%if value.suggestion?%>
+      <ul>Suggestion for improvement: <%end%><%= value.suggestion %></ul>
+      <% @result_statuses.where(id: value.result_status_id).each do |result| %>
+      <ul>ResultName: <%= result.name %></ul>
+      <ul>ResultValue: <%= result.description %></ul></li>
+      <% end %>
+      <% end %>
 </p>
 
-<p>
-  <strong>Orderid:</strong>
-  <%= @test.orderid %>
-</p>
 
-<%= link_to 'Edit', edit_test_path(@test) %> |
+
 <%= link_to 'Back', tests_path %>
